@@ -5,61 +5,100 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Super Bowl LV - Familia Mendoza</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏈</text></svg>" />
+
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.hero}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <img src="/superbowl-logo.png" alt="Super Bowl LV" className={styles.logo} />
+          Super Bowl LV
+          <small>Familia Mendoza</small>
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
+      </div>
+      <main className={styles.main}>
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <article className={styles.card}>
+            <h1>Luis Fernando</h1>
+            <div className={styles.scoreContainer}>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/tampa-logo.svg" alt="Tampa Bay Buccaneers" />
+                  <p>Tampa Bay Buccaneers</p>
+                  </div>
+                <h2>26</h2>
+              </div>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/kansas-logo.svg" alt="Kansas City Chiefs " />
+                  <p>Kansas City Chiefs</p>
+                </div>
+                <h2>26</h2>
+              </div>
+            </div>
+          </article>
+          <article className={styles.card}>
+            <h1>Araceli</h1>
+            <div className={styles.scoreContainer}>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/tampa-logo.svg" alt="Tampa Bay Buccaneers" />
+                  <p>Tampa Bay Buccaneers</p>
+                  </div>
+                <h2>26</h2>
+              </div>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/kansas-logo.svg" alt="Kansas City Chiefs " />
+                  <p>Kansas City Chiefs</p>
+                </div>
+                <h2>26</h2>
+              </div>
+            </div>
+          </article>
+          <article className={styles.card}>
+            <h1>José Luis</h1>
+            <div className={styles.scoreContainer}>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/tampa-logo.svg" alt="Tampa Bay Buccaneers" />
+                  <p>Tampa Bay Buccaneers</p>
+                  </div>
+                <h2>26</h2>
+              </div>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/kansas-logo.svg" alt="Kansas City Chiefs " />
+                  <p>Kansas City Chiefs</p>
+                </div>
+                <h2>26</h2>
+              </div>
+            </div>
+          </article>
+          <article className={styles.card}>
+            <h1>Victor</h1>
+            <div className={styles.scoreContainer}>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/tampa-logo.svg" alt="Tampa Bay Buccaneers" />
+                  <p>Tampa Bay Buccaneers</p>
+                  </div>
+                <h2>26</h2>
+              </div>
+              <div className={styles.team}>
+                <div className={styles.teamName}>
+                  <img src="/kansas-logo.svg" alt="Kansas City Chiefs " />
+                  <p>Kansas City Chiefs</p>
+                </div>
+                <h2>26</h2>
+              </div>
+            </div>
+          </article>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+      <img src="/glow.svg" className={styles.glow}/>
     </div>
   )
 }
