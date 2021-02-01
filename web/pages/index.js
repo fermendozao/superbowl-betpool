@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import client from '../client';
-import BetCard from '../components/BetCard';
+import BetCard from '../components/betCard';
 import styles from '../styles/Home.module.css'
 
 export default function Home(props) {
