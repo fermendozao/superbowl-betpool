@@ -66,4 +66,11 @@
 .team p {
   color: gray;
   font-size: 1em;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1rem;
+  }
 }

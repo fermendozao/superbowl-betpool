@@ -17,10 +17,18 @@
   width: 100vw;
   height: 60vh;
   padding-top: 40px;
-  filter: hue-rotate();
-  position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.hero:after {
+  content: '';
+  background: rgba(0,0,0,.65);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .main {
@@ -30,8 +38,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40vh;
   background: white;
+  max-width: 100%;
 }
 
 .footer {
@@ -80,6 +88,7 @@
   font-size: 4rem;
   color: white;
   text-transform: uppercase;
+  z-index: 999;
 }
 
 
@@ -106,12 +115,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 800px;
   width: 800px;
+  max-width: 100%;
   flex-direction: column;
 }
 
 .glow {
+  display: none;
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -123,10 +133,48 @@
   height: 1em;
 }
 
+.matchScore {
+  display: flex;
+  flex-direction: row;
+  width: 600px;
+  max-width: 100%;
+  margin: 50px auto 0;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.matchTeam {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 4em;
+  flex: 0 0 40%;
+}
+
+.matchTeam img {
+  height: 70px;
+}
+
+.matchTeam span,
+.matchTeam p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder
+}
+
+.matchTeam span {
+  font-size: 6em;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+
+  .title {
+    font-size: 2rem;
   }
 
   .main {
@@ -144,5 +192,19 @@
 
   .glow {
     display: none;
+  }
+
+  .matchTeam {
+    margin: 0 1em;
+  }
+
+  .matchTeam span {
+    font-size: 3em;
+  }
+}
+
+@media (max-width: 320px)  {
+  .hero {
+    height: 100vh;
   }
 }
