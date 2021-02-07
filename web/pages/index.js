@@ -37,6 +37,12 @@ export default function Home(props) {
             <span>{props.match.length && props.match[0].awayScore > 1 ? props.match[0].awayScore  : 0 }</span>
           </div>
         </div>
+        <div className={styles.metadata}>
+          <h3>
+            <img src="/money.png" alt="Kansas City Chiefs " /> Premio {"   "}
+            {`$ ${props.bets.length * 100}`}
+          </h3>
+        </div>
       </div>
       <main className={styles.main}>
         <div className={styles.grid}>
