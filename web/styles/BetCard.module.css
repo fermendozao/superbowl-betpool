@@ -37,6 +37,7 @@
 .scoreContainer {
   display: flex;
   flex-direction: row;
+  z-index: 1;
 }
 
 .scoreContainer div{
@@ -69,8 +70,38 @@
   text-align: center;
 }
 
+.isWinning {
+  background: rgb(40 146 40 / 63%);
+  color: white;
+  position: relative;
+}
+
+.isWinning p {
+  color: white;
+}
+
+.isWinning h1 {
+  color: white;
+  background-clip: unset;
+  background: transparent;
+  -webkit-text-fill-color: unset;
+  -webkit-box-decoration-break: unset;
+}
+
+.isWinning:after {
+  content: 'GANANDO';
+  color: rgb(150 201 150);
+  font-size: 4em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-weight: bolder;
+  z-index: 0;
+}
+
 @media (max-width: 600px) {
   .card {
     padding: 1rem;
+    margin: 0;
   }
 }

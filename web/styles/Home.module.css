@@ -185,6 +185,16 @@
   align-items: center;
 }
 
+.winningIndicator {
+  width: 10px;
+  height: 10px;
+  background: green;
+  display: inline-block;
+  z-index: 999;
+  margin: 0 auto 20px;
+  border-radius: 100%;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;

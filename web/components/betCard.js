@@ -3,7 +3,7 @@ import styles from '../styles/BetCard.module.css'
 export default function BetCard(data) {
   console.log(data);
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${data.isWinning ? styles.isWinning : null}`}>
       <h1>{data.gamblerName}</h1>
       <div className={styles.scoreContainer}>
         <div className={styles.team}>

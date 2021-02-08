@@ -1,9 +1,55 @@
+import {useState, useEffect} from "react";
+
+
 import Head from 'next/head'
 import client from '../client';
 import BetCard from '../components/betCard';
 import styles from '../styles/Home.module.css'
 
+
+
 export default function Home(props) {
+  const [whosWinning, setWhosWinning] = useState(null);
+  const [betWinner, setBetWinner] = useState(null);
+
+  useEffect(() => {
+    setWinner();
+    setBetWhosWinner();
+  }, []);
+
+  const setWinner = () => {
+    const homeScore = props.match[0].homeScore;
+    const awayScore = props.match[0].awayScore;
+
+    const substractionScore = homeScore - awayScore;
+
+    if (substractionScore > 0) {
+      setWhosWinning('home');
+    } else {
+      setWhosWinning('away');
+    }
+  }
+
+  const setBetWhosWinner = () => {
+    const homeScore = props.match[0].homeScore;
+    const awayScore = props.match[0].awayScore;
+
+    const substractionScore = homeScore - awayScore;
+
+    const eachSubs = props.bets.map((item) => item.homeScore - item.awayScore)
+
+    const closest = eachSubs.reduce((a, b) => {
+        return Math.abs(b - substractionScore) < Math.abs(a - substractionScore) ? b : a;
+    });
+
+    const winnerIndex = eachSubs.indexOf(4);
+
+    setBetWinner(props.bets[winnerIndex])
+
+  }
+
+
+
   console.log(props)
   return (
     <div className={styles.container}>
@@ -22,6 +68,7 @@ export default function Home(props) {
 
         <div className={styles.matchScore}>
           <div className={styles.matchTeam}>
+            {whosWinning === 'home' && <span className={styles.winningIndicator} />}
             <div className={styles.matchTeamName}>
               <img src="/tampa-logo.svg" alt="Tampa Bay Buccaneers" />
               <p>Tampa Bay Buccaneers</p>
@@ -30,6 +77,7 @@ export default function Home(props) {
           </div>
 
           <div className={styles.matchTeam}>
+            {whosWinning === 'away' && <span className={styles.winningIndicator} />}
             <div className={styles.matchTeamName}>
               <img src="/kansas-logo.svg" alt="Kansas City Chiefs " />
               <p>Kansas City Chiefs</p>
@@ -47,7 +95,7 @@ export default function Home(props) {
       <main className={styles.main}>
         <div className={styles.grid}>
           {props.bets.map(item => {
-            return <BetCard key={item["_id"]} {...item} />
+            return <BetCard key={item["_id"]} {...item} isWinning={betWinner && betWinner["_id"] === item["_id"]}/>
           })}
           {!props.bets.length &&
             <>
