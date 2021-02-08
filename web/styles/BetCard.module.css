@@ -70,7 +70,7 @@
   text-align: center;
 }
 
-.isWinning {
+/* .isWinning {
   background: rgb(40 146 40 / 63%);
   color: white;
   position: relative;
@@ -97,7 +97,7 @@
   bottom: 0;
   font-weight: bolder;
   z-index: 0;
-}
+} */
 
 @media (max-width: 600px) {
   .card {
