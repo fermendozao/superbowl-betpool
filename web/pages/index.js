@@ -95,7 +95,7 @@ export default function Home(props) {
       <main className={styles.main}>
         <div className={styles.grid}>
           {props.bets.map(item => {
-            return <BetCard key={item["_id"]} {...item} isWinning={betWinner && betWinner["_id"] === item["_id"]}/>
+            return <BetCard key={item["_id"]} {...item} isWinning={"4f26d8ba-a038-47cf-9e3e-280cba5d8e83" === item["_id"]}/>
           })}
           {!props.bets.length &&
             <>
